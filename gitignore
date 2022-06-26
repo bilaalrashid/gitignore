@@ -1,1 +1,30 @@
 #!/usr/bin/env bash
+
+# Define constants
+declare -r CACHE_DIRECTORY="$HOME/.gitignore-cache"
+declare -r REPOSITORY_URL="https://github.com/github/gitignore.git"
+
+# Handles creating or updating the cached gitignore files
+function create_or_update_cache() {
+    if does_cache_exist
+    then 
+        update_cache
+    else 
+        create_gitignore_cache
+    fi
+}
+
+# Checks if the cached gitignore files exist
+function does_cache_exist() {
+    [ -d "$CACHE_DIRECTORY" ]
+}
+
+# Updates the cached gitignore files
+function update_cache() {
+    git -C $CACHE_DIRECTORY pull
+}
+
+# Creates a cache of the gitignore files
+function create_gitignore_cache() {
+    git clone $REPOSITORY_URL $CACHE_DIRECTORY
+}
