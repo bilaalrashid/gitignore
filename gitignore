@@ -66,12 +66,12 @@ function does_cache_exist() {
 
 # Updates the cached gitignore files
 function update_cache() {
-    git -C $CACHE_DIRECTORY pull
+    git -C $CACHE_DIRECTORY pull > /dev/null
 }
 
 # Creates a cache of the gitignore files
 function create_gitignore_cache() {
-    git clone $REPOSITORY_URL $CACHE_DIRECTORY
+    git clone $REPOSITORY_URL $CACHE_DIRECTORY > /dev/null
 }
 
 ############################################################
