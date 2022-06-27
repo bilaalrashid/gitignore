@@ -40,3 +40,16 @@ function update_cache() {
 function create_gitignore_cache() {
     git clone $REPOSITORY_URL $CACHE_DIRECTORY
 }
+
+# Required as this is invoked as a script rather than sourced
+# This MUST be the first operation other than the function definitions
+[[ $_ != $0 ]]
+
+# Check a valid function was specified
+if declare -f "$1" >/dev/null 2>&1; then
+  # Invoke the specified function, passing arguments through
+  "$@" # Same as "$1" "$2" "$3" ... for full argument list
+else
+  echo "Function $1 not recognized" >&2
+  exit 1
+fi
