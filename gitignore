@@ -12,6 +12,15 @@ declare -r REPOSITORY_URL="https://github.com/github/gitignore.git"
 # Commands                                                 #
 ############################################################
 
+# Generates a combined gitignore file from the specified templates
+# @param $@ The list of the gitiginore templates to use
+function create() {
+    for file in "$@"
+    do
+        echo "$CACHE_DIRECTORY/$file.gitignore"
+    done | xargs cat
+}
+
 # Search all available gitignore files
 # @param $1 The search query
 function search() {
