@@ -6,7 +6,7 @@ declare -r REPOSITORY_URL="https://github.com/github/gitignore.git"
 
 # Lists all available gitignore templates
 function list() {
-    find "$HOME/.gitignore-cache" -name "*.gitignore"
+    find $CACHE_DIRECTORY -name "*.gitignore"
 }
 
 # Handles creating or updating the cached gitignore files
@@ -33,3 +33,5 @@ function update_cache() {
 function create_gitignore_cache() {
     git clone $REPOSITORY_URL $CACHE_DIRECTORY
 }
+
+list
