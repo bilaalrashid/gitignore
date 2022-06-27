@@ -31,10 +31,12 @@ function generate() {
 }
 
 # Search all available gitignore files
-# @param $1 The search query
+# @param $@ The search queries
 function search() {
-    local QUERY=$1
-    list | grep -i $QUERY
+    for query in "$@"
+    do
+        list | grep -i $query
+    done    
 }
 
 # Lists all available gitignore templates
