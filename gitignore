@@ -14,7 +14,7 @@ declare -r REPOSITORY_URL="https://github.com/github/gitignore.git"
 
 # Generates a combined gitignore file from the specified templates
 # @param $@ The list of the gitiginore templates to use
-function create() {
+function generate() {
     echo "# Generated using 'gitignore create $@'"
     echo ""
 
