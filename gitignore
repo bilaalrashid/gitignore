@@ -1,8 +1,16 @@
 #!/usr/bin/env bash
 
+############################################################
+# Constants                                                #
+############################################################
+
 # Define constants
 declare -r CACHE_DIRECTORY="$HOME/.gitignore-cache"
 declare -r REPOSITORY_URL="https://github.com/github/gitignore.git"
+
+############################################################
+# Commands                                                 #
+############################################################
 
 # Search all available gitignore files
 # @param $1 The search query
@@ -40,6 +48,10 @@ function update_cache() {
 function create_gitignore_cache() {
     git clone $REPOSITORY_URL $CACHE_DIRECTORY
 }
+
+############################################################
+# Main                                                     #
+############################################################
 
 # Required as this is invoked as a script rather than sourced
 # This MUST be the first operation other than the function definitions
