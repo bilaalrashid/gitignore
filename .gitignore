@@ -1,10 +1,12 @@
+# Generated using 'gitignore generate Global/macOS Global/VisualStudioCode'
+
 # General
 .DS_Store
 .AppleDouble
 .LSOverride
 
 # Icon must end with two \r
-Icon
+Icon
 
 # Thumbnails
 ._*
@@ -24,3 +26,15 @@ Icon
 Network Trash Folder
 Temporary Items
 .apdisk
+.vscode/*
+!.vscode/settings.json
+!.vscode/tasks.json
+!.vscode/launch.json
+!.vscode/extensions.json
+!.vscode/*.code-snippets
+
+# Local History for Visual Studio Code
+.history/
+
+# Built Visual Studio Code Extensions
+*.vsix
