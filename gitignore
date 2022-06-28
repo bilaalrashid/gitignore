@@ -8,7 +8,7 @@
 declare -r CACHE_DIRECTORY="$HOME/.gitignore-cache"
 declare -r REPOSITORY_URL="https://github.com/github/gitignore.git"
 declare -r CUSTOM_RULES_FILE=".custom.gitignore"
-declare -r VERSION="0.0.0"
+declare -r VERSION="1.0.0"
 
 ############################################################
 # Commands                                                 #
