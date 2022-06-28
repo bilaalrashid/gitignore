@@ -45,3 +45,12 @@ Lists all available `.gitignore` template files.
 ```bash
 gitignore list
 ```
+
+### Help
+
+Display help information.
+
+```bash
+gitignore help
+```
+
