@@ -8,7 +8,7 @@ Effortlessly generate `.gitignore` files from the command line using the [github
 
 Generates the contents of a `.gitignore` file from specified templates names.
 
-```
+```bash
 gitignore generate [template 1] [template 2] [template 3] ...
 ```
 
@@ -16,7 +16,7 @@ To append custom rules to the generated output, an optional `.custom.gitignore` 
 
 #### Example
 
-```
+```bash
 $ gitignore generate Swift Global/Xcode Global/macOS > .gitignore
 ```
 
@@ -24,13 +24,13 @@ $ gitignore generate Swift Global/Xcode Global/macOS > .gitignore
 
 Perform a batch search of queries against all available `.gitignore` templates.
 
-```
+```bash
 gitignore search [query 1] [query 2] [query 3] ...
 ```
 
 #### Example
 
-```
+```bash
 $ gitignore search swift xcode mac
 Swift
 Global/Xcode
@@ -42,6 +42,6 @@ Global/macOS
 
 Lists all available `.gitignore` template files.
 
-```
+```bash
 gitignore list
 ```
