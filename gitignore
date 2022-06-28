@@ -64,6 +64,10 @@ function help() {
     echo "More information: https://github.com/bilaalrashid/gitignore"
 }
 
+############################################################
+# Utility functions                                        #
+############################################################
+
 # Handles creating or updating the cached gitignore files
 function create_or_update_cache() {
     if does_cache_exist
@@ -97,8 +101,11 @@ function create_gitignore_cache() {
 # This MUST be the first operation other than the function definitions
 [[ $_ != $0 ]]
 
+utility_commands=("create_or_update_cache" "does_cache_exist" "update_cache" "create_gitignore_cache")
+
 # Check a valid function was specified
-if declare -f "$1" >/dev/null 2>&1; then
+if declare -f "$1" >/dev/null 2>&1 && [[ ! " ${utility_commands[*]} " =~ " ${1} " ]]
+then
   # Invoke the specified function, passing arguments through
   "$@" # Same as "$1" "$2" "$3" ... for full argument list
 else
