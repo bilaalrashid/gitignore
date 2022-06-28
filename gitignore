@@ -8,6 +8,7 @@
 declare -r CACHE_DIRECTORY="$HOME/.gitignore-cache"
 declare -r REPOSITORY_URL="https://github.com/github/gitignore.git"
 declare -r CUSTOM_RULES_FILE=".custom.gitignore"
+declare -r VERSION="0.0.0"
 
 ############################################################
 # Commands                                                 #
@@ -32,7 +33,7 @@ function generate() {
     done | xargs cat
 }
 
-# Search all available gitignore files
+# Batch search all available gitignore files for the specified queries
 # @param $@ The search queries
 function search() {
     create_or_update_cache
@@ -47,6 +48,20 @@ function search() {
 function list() {
     create_or_update_cache
     find $CACHE_DIRECTORY -name "*.gitignore" | sed "s|$CACHE_DIRECTORY/||" | sed "s|.gitignore||" | sort
+}
+
+# Display help information
+function help() {
+    echo "gitignore $VERSION"
+    echo "Effortlessly generate .gitignore files from the command line using the GitHub templates."
+    echo ""
+    echo "Usage: gitignore [command] [arguments]"
+    echo "Commands:"
+    echo "  generate [template] [template] ... - Generates a combined gitignore file from the specified templates"
+    echo "  search [query] [query] ...         - Batch search all available gitignore files for the specified queries"
+    echo "  list                               - Lists all available gitignore templates"
+    echo "  help                               - Display help information"
+    echo "More information: https://github.com/bilaalrashid/gitignore"
 }
 
 # Handles creating or updating the cached gitignore files
