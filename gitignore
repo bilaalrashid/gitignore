@@ -102,6 +102,8 @@ if declare -f "$1" >/dev/null 2>&1; then
   # Invoke the specified function, passing arguments through
   "$@" # Same as "$1" "$2" "$3" ... for full argument list
 else
-  echo "Function $1 not recognized" >&2
+  echo "Invalid command" >&2
+  echo ""
+  help
   exit 1
 fi
