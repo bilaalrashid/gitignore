@@ -13,7 +13,7 @@ brew install bilaalrashid/tap/gitignore
 ### Manual
 
 ```bash
-wget https://raw.githubusercontent.com/bilaalrashid/gitignore/1.0.0/gitignore
+wget https://raw.githubusercontent.com/bilaalrashid/gitignore/1.0.1/gitignore
 sudo chmod u+x gitignore
 sudo mv gitignore /usr/local/bin/gitignore
 ```
