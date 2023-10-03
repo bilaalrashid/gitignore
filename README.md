@@ -67,3 +67,16 @@ Display help information.
 ```bash
 gitignore help
 ```
+
+## Deployment
+
+1. Bump `VERSION` in https://github.com/bilaalrashid/gitignore/blob/main/gitignore#L11
+2. Create tag in the form `1.0.0`
+3. Create release in the form `Version 1.0.0`
+4. Bump the version and sha256 hash in https://github.com/bilaalrashid/homebrew-tap/blob/main/Formula/gitignore.rb
+```bash
+URL=https://github.com/bilaalrashid/gitignore/archive/refs/tags/1.0.0.tar.gz
+wget $URL
+sha256sum $(basename $URL)
+```
+5. Bump version in https://github.com/bilaalrashid/gitignore?tab=readme-ov-file#manual
