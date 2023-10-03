@@ -25,12 +25,16 @@ function generate() {
     if [ -f "$CUSTOM_RULES_FILE" ]
     then
         cat $CUSTOM_RULES_FILE
+        # Ensure there is a line break between the contents of each file
+        echo ""
     fi
 
     for file in "$@"
     do
-        echo "$CACHE_DIRECTORY/$file.gitignore"
-    done | xargs cat
+        cat "$CACHE_DIRECTORY/$file.gitignore"
+        # Ensure there is a line break between the contents of each file
+        echo ""
+    done
 }
 
 # Batch search all available gitignore files for the specified queries
