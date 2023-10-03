@@ -24,15 +24,23 @@ function generate() {
 
     if [ -f "$CUSTOM_RULES_FILE" ]
     then
+        echo "####### START OF $CUSTOM_RULES_FILE #######"
+        echo ""
         cat $CUSTOM_RULES_FILE
-        # Ensure there is a line break between the contents of each file
+        # Ensure there is a line break at the end of each file
+        echo ""
+        echo "####### END OF $CUSTOM_RULES_FILE #######"
         echo ""
     fi
 
     for file in "$@"
     do
+        echo "####### START OF $file.gitignore #######"
+        echo ""
         cat "$CACHE_DIRECTORY/$file.gitignore"
-        # Ensure there is a line break between the contents of each file
+        # Ensure there is a line break at the end of each file
+        echo ""
+        echo "####### END OF $file.gitignore #######"
         echo ""
     done
 }
