@@ -1,6 +1,6 @@
 # gitignore
 
-![License](https://img.shields.io/github/license/bilaalrashid/gitignore)
+![GitHub releases](https://img.shields.io/github/v/release/bilaalrashid/gitignore) ![License](https://img.shields.io/github/license/bilaalrashid/gitignore)
 
 Effortlessly generate and regenerate `.gitignore` files from the command line using the [github/gitignore](https://github.com/github/gitignore) templates.
 
